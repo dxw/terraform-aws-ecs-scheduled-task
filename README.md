@@ -6,7 +6,7 @@ A Terraform module to create a scheduled task in AWS ECS
 
 ``` hcl
 module "scheduled_task" {
-  source  = "github.com/dxw/terraform-aws-ecs-scheduled-task"
+  source  = "github.com:dxw/terraform-aws-ecs-scheduled-task"
   version = "0.1"
 
   name                  = "my_awesome_task"
