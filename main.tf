@@ -2,11 +2,11 @@
 
 resource "aws_iam_role" "scheduled_task_ecs_execution" {
   name               = "${var.name}-${var.environment}-scheduled-task-ecs-execution-role"
-  assume_role_policy = "${file("./policies/scheduled-task-ecs-assume-role-policy.json")}"
+  assume_role_policy = "${file("${path.module}/policies/scheduled-task-ecs-assume-role-policy.json")}"
 }
 
 data "template_file" "scheduled_task_ecs_execution_policy" {
-  template = "${file("./policies/scheduled-task-ecs-execution-policy.json")}"
+  template = "${file("${path.module}/policies/scheduled-task-ecs-execution-policy.json")}"
 }
 
 resource "aws_iam_role_policy" "scheduled_task_ecs_execution" {
@@ -19,18 +19,18 @@ resource "aws_iam_role_policy" "scheduled_task_ecs_execution" {
 
 resource "aws_iam_role" "scheduled_task_ecs" {
   name               = "${var.name}-${var.environment}-scheduled-task-ecs-role"
-  assume_role_policy = "${file("./policies/scheduled-task-ecs-assume-role-policy.json")}"
+  assume_role_policy = "${file("${path.module}/policies/scheduled-task-ecs-assume-role-policy.json")}"
 }
 
 ## Cloudwatch event role
 
 resource "aws_iam_role" "scheduled_task_cloudwatch" {
   name               = "${var.name}-${var.environment}-scheduled-task-cloudwatch-role"
-  assume_role_policy = "${file("./policies/scheduled-task-cloudwatch-assume-role-policy.json")}"
+  assume_role_policy = "${file("${path.module}/policies/scheduled-task-cloudwatch-assume-role-policy.json")}"
 }
 
 data "template_file" "scheduled_task_cloudwatch_policy" {
-  template = "${file("./policies/scheduled-task-cloudwatch-policy.json")}"
+  template = "${file("${path.module}/policies/scheduled-task-cloudwatch-policy.json")}"
 
   vars {
     task_execution_role_arn = "${aws_iam_role.scheduled_task_ecs_execution.arn}"
