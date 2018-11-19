@@ -48,6 +48,16 @@ The following variables can be configured:
 - **Description**: ARN of cluster on which to run task
 - **Default**: `none`
 
+#### `cpu`
+
+- **Description**: The number of cpu units used by the task
+- **Default**: `none`
+
+#### `memory`
+
+- **Description**: The amount (in MiB) of memory used by the task
+- **Default**: `none`
+
 ### Optional
 
 #### `network_mode`

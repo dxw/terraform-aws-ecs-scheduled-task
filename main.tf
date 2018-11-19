@@ -52,6 +52,8 @@ resource "aws_ecs_task_definition" "scheduled_task" {
   network_mode             = "${var.network_mode}"
   execution_role_arn       = "${aws_iam_role.scheduled_task_ecs_execution.arn}"
   task_role_arn            = "${aws_iam_role.scheduled_task_ecs.arn}"
+  cpu                      = "${var.cpu}"
+  memory                   = "${var.memory}"
 }
 
 ## Cloudwatch event

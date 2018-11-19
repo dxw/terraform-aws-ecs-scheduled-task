@@ -34,3 +34,13 @@ variable "task_count" {
   description = "Number of tasks to run"
   default     = 1
 }
+
+variable "cpu" {
+  type        = "string"
+  description = "The number of cpu units used by the task"
+}
+
+variable "memory" {
+  type        = "string"
+  description = "The amount (in MiB) of memory used by the task"
+}
