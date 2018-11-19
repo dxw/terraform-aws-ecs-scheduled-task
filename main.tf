@@ -2,7 +2,7 @@
 
 resource "aws_iam_role" "scheduled_task_ecs_execution" {
   name               = "${var.name}-${var.environment}-scheduled-task-ecs-execution-role"
-  assume_role_policy = "${file("${path.module}/policies/scheduled-task-ecs-assume-role-policy.json")}"
+  assume_role_policy = "${file("${path.module}/policies/scheduled-task-ecs-execution-assume-role-policy.json")}"
 }
 
 data "template_file" "scheduled_task_ecs_execution_policy" {
