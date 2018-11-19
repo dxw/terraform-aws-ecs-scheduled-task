@@ -30,7 +30,7 @@ variable "cluster_arn" {
 }
 
 variable "task_count" {
-  type       = "string"
+  type        = "string"
   description = "Number of tasks to run"
-  default    = 1
+  default     = 1
 }
