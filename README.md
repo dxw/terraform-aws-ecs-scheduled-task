@@ -88,4 +88,4 @@ The following outputs are exported:
 - **Description**: Scheduled Task ARN
 
 [container_definition_docs]: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html
-[schedule_definition_docs]: https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html
+[schedule_expression_docs]: https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html
