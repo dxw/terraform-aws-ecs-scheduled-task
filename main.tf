@@ -73,5 +73,12 @@ resource "aws_cloudwatch_event_target" "scheduled_task" {
   ecs_target {
     task_count          = "${var.task_count}"
     task_definition_arn = "${aws_ecs_task_definition.scheduled_task.arn}"
+    launch_type         = "${var.launch_type}"
+
+     network_configuration {
+      subnets         = ["${var.subnets}"]
+      security_groups = ["${var.security_groups}"]
+      assign_public_ip = "${var.assign_public_ip}"
+    }
   }
 }
