@@ -69,6 +69,7 @@ resource "aws_cloudwatch_event_target" "scheduled_task" {
   rule      = "${aws_cloudwatch_event_rule.scheduled_task.name}"
   arn       = "${var.cluster_arn}"
   role_arn  = "${aws_iam_role.scheduled_task_cloudwatch.arn}"
+  input     = jsonencode({})
 
   ecs_target {
     task_count          = "${var.task_count}"
