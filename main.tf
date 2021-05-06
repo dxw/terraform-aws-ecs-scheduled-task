@@ -30,7 +30,7 @@ resource "aws_iam_role" "scheduled_task_cloudwatch" {
 }
 
 data "template_file" "scheduled_task_cloudwatch_policy" {
-  template = "${file("${path.module}/policies/scheduled-task-cloudwatch-policy.json")}"
+  template = file("${path.module}/policies/scheduled-task-cloudwatch-policy.json")
 
   vars = {
     task_execution_role_arn = aws_iam_role.scheduled_task_ecs_execution.arn
